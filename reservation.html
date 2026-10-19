@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a Table | Recipe Secrets Malaysian Chinese Restaurant</title>
+<meta name="description" content="Reserve a table at Recipe Secrets, a Malaysian Chinese restaurant known for char kway teow, bak kut teh and hawker classics. Book online for birthdays, family gatherings and Chinese New Year dinners." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('has-js');</script>
+<!--
+  IMAGE CREDITS (Unsplash — replace with your own photography before launch):
+  Page hero (closest match — restaurant dining room; replace with a real kopitiam photo): https://images.unsplash.com/photo-1414235077428-338989a2e8c0
+-->
+<!--
+  FORMSPREE SETUP:
+  1. Create a free form at https://formspree.io and copy your form ID.
+  2. Replace "YOUR_FORM_ID" in the form's action attribute below with that ID,
+     e.g. action="https://formspree.io/f/abcd1234".
+  3. No other code changes are needed — script.js already posts via fetch()
+     and listens for Formspree's JSON response to show the success message.
+-->
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Recipe <span>Secrets</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="specials.html">Specials</a></li>
+        <li><a href="reservation.html" aria-current="page">Reservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <img
+      class="hero-bg"
+      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80"
+      alt="A warmly lit restaurant dining room, a stand-in for our kopitiam-style interior"
+      width="1920" height="1000" loading="lazy"
+    />
+    <div class="container page-hero-content">
+      <span class="breadcrumb">Reservation</span>
+      <h1>Book Your Table</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="form-card fade-in">
+
+        <form id="reservation-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <p class="form-submit-error" role="alert" style="color:#7a1712; min-height:1.2em;"></p>
+
+          <div class="form-grid">
+            <div class="form-field full">
+              <label for="res-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="res-name" name="name" required autocomplete="name" />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="res-phone" name="phone" required autocomplete="tel" placeholder="+65 1234 5678" />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-email">Email Address <span class="required">*</span></label>
+              <input type="email" id="res-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-date">Date <span class="required">*</span></label>
+              <input type="date" id="res-date" name="date" required />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-time">Time <span class="required">*</span></label>
+              <input type="time" id="res-time" name="time" required />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-guests">Number of Guests <span class="required">*</span></label>
+              <input type="number" id="res-guests" name="guests" min="1" max="20" step="1" required />
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="res-occasion">Occasion <span class="required">*</span></label>
+              <select id="res-occasion" name="occasion" required>
+                <option value="">Select an occasion</option>
+                <option value="birthday">Birthday</option>
+                <option value="family-gathering">Family Gathering</option>
+                <option value="cny-dinner">Chinese New Year Dinner</option>
+                <option value="business">Business</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="error-message" role="alert"></span>
+            </div>
+
+            <div class="form-field full">
+              <label for="res-requests">Special Requests</label>
+              <textarea id="res-requests" name="special_requests" rows="4" placeholder="Allergies, seating preferences, celebration details…"></textarea>
+              <span class="error-message" role="alert"></span>
+            </div>
+          </div>
+
+          <p class="form-note">Fields marked <span class="required">*</span> are required. We'll confirm your booking by phone or email within 24 hours.</p>
+
+          <button type="submit" class="btn btn-primary" data-label="Book a Table">Book a Table</button>
+        </form>
+
+        <div class="form-success" aria-live="polite">
+          <span class="icon" aria-hidden="true">🎉</span>
+          <h3>Thank You — Your Request Is In!</h3>
+          <p>We've received your reservation request and will confirm by phone or email shortly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Recipe Secrets</h4>
+        <p>Malaysian Chinese hawker and home-style cooking, serving recipes passed down from Penang, KL and Ipoh.</p>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <address>
+          <!-- TODO: replace -->
+          12 Jalan Kopitiam, Georgetown,<br />10200 Penang, Malaysia<br />
+          Tel: +60 4-123 4567<br />
+          hello@recipesecrets.example
+        </address>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Recipe Secrets. All rights reserved. <!-- TODO: replace --></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

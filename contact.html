@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us | Recipe Secrets Malaysian Chinese Restaurant</title>
+<meta name="description" content="Find Recipe Secrets' address, phone, email, opening hours and map. A Malaysian Chinese restaurant serving char kway teow, bak kut teh and hawker classics." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('has-js');</script>
+<!--
+  IMAGE CREDITS (Unsplash — replace with your own photography before launch):
+  Page hero (closest match — spicy dish with fresh chillies): https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd
+-->
+<!--
+  FORMSPREE SETUP:
+  1. Create a free form at https://formspree.io and copy your form ID.
+  2. Replace "YOUR_FORM_ID" in the form's action attribute below with that ID,
+     e.g. action="https://formspree.io/f/abcd1234".
+  3. No other code changes are needed — script.js already posts via fetch()
+     and listens for Formspree's JSON response to show the success message.
+-->
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Recipe <span>Secrets</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="specials.html">Specials</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <img
+      class="hero-bg"
+      src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=1920&q=80"
+      alt="A spicy red dish garnished with fresh chillies and herbs"
+      width="1920" height="1000" loading="lazy"
+    />
+    <div class="container page-hero-content">
+      <span class="breadcrumb">Contact</span>
+      <h1>Visit Us or Say Hello</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="fade-in">
+          <div class="contact-details">
+            <h2>Recipe Secrets</h2>
+            <dl>
+              <!-- TODO: replace -->
+              <dt>Address</dt>
+              <dd>12 Jalan Kopitiam, Georgetown, 10200 Penang, Malaysia</dd>
+
+              <dt>Phone</dt>
+              <dd><a href="tel:+6041234567">+60 4-123 4567</a></dd>
+
+              <dt>Email</dt>
+              <dd><a href="mailto:hello@recipesecrets.example">hello@recipesecrets.example</a></dd>
+
+              <dt>Opening Hours</dt>
+              <dd>
+                Mon – Fri: 11:00 AM – 2:30 PM, 5:30 PM – 10:00 PM<br />
+                Sat – Sun: 10:30 AM – 10:30 PM<br />
+                Public Holidays: 11:00 AM – 10:00 PM
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form-card" style="margin-top:2rem; box-shadow: var(--shadow-card);">
+            <h3>Send Us a Message</h3>
+
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <p class="form-submit-error" role="alert" style="color:#7a1712; min-height:1.2em;"></p>
+
+              <div class="form-field">
+                <label for="contact-name">Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" name="name" required autocomplete="name" />
+                <span class="error-message" role="alert"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email">Email <span class="required">*</span></label>
+                <input type="email" id="contact-email" name="email" required autocomplete="email" />
+                <span class="error-message" role="alert"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" name="message" rows="4" required></textarea>
+                <span class="error-message" role="alert"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" data-label="Send Message">Send Message</button>
+            </form>
+
+            <div class="form-success" aria-live="polite">
+              <span class="icon" aria-hidden="true">✅</span>
+              <h3>Message Sent!</h3>
+              <p>Thanks for reaching out — we'll get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="map-wrapper">
+            <!-- TODO: replace with your restaurant's exact Google Maps embed -->
+            <iframe
+              title="Recipe Secrets location map"
+              src="https://www.google.com/maps?q=Georgetown%2C%20Penang%2C%20Malaysia&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Recipe Secrets</h4>
+        <p>Malaysian Chinese hawker and home-style cooking, serving recipes passed down from Penang, KL and Ipoh.</p>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <address>
+          <!-- TODO: replace -->
+          12 Jalan Kopitiam, Georgetown,<br />10200 Penang, Malaysia<br />
+          Tel: +60 4-123 4567<br />
+          hello@recipesecrets.example
+        </address>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="reservation.html">Reservation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Recipe Secrets. All rights reserved. <!-- TODO: replace --></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
